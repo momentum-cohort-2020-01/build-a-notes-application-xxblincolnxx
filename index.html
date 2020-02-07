@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,44 @@
   <script src="moment.min.js" defer></script>
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <main id='main'>
-    <h1 class='title'>Notes for Ben</h1>
-    <form id='new-note-form' class='form'>
-      <label for='note-title'>Note Title:</label>
-      <input type=text id='note-title'>
-      <label for='note-text'>Note:</label>
-      <textarea type='text' id='note-text'></textarea>
-      <div>
-        <button type='submit'>Upload Note</button>
+    <div class='heading'> 
+      <div id='baby-pic' class='baby-pic'></div>
+      <div id='popup-form' class='popup-form'>
+        <form id='new-note-form' class='form' style = 'display: none;'>
+          <label for='note-title'>CREATE NEW NOTE</label>
+          <input type=text id='note-title' placeholder="Title of note..." required>
+          <!-- <label for='note-text'>Note:</label> -->
+          <textarea type='text' id='note-text' placeholder="Write note here..." required></textarea>
+          <button id='note-upload-button' type='submit'>UPLOAD NOTE</button>
+        </form>
+        <form id='edit-note-form' class='form' style = 'display: none;'>
+          <label for='edit-note-title'>EDIT NOTE</label>
+          <input type=text id='edit-note-title' placeholder="Title of note..." required>
+          <!-- <label for='note-text'>Note:</label> -->
+          <textarea type='text' id='edit-note-text' placeholder="Write note here..." required></textarea>
+          <button id='edit-upload-button' type='submit'>UPDATE NOTE</button>
+        </form>
       </div>
-    </form>
-    <section id='most-recent'>
+    </div> 
+    <nav id='nav-bar' class='nav-bar'>
+    <div class='nav-right'>
+      <button id='new-note-button' class = 'new-note-button' onclick='openForm()'>CREATE NEW NOTE</button>
+    </div>
+    </nav>
+    <div id='left-menu' class='left-menu'>
+      <!-- <p class='list-title'>List of Notes By Date</p> -->
+      <ul id='notes-by-date'>
+      </ul>
+    </div>
+    <section id='most-recent' class='note-display'>
       <h2 id='recent-title'></h2>
       <p id='recent-note'></p>
     </section>
   </main>
-  
+
 </body>
+
 </html>
