@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="moment.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main id='main'>
+    <h1 class='title'>Notes for Ben</h1>
+    <form id='new-note-form' class='form'>
+      <label for='note-title'>Note Title:</label>
+      <input type=text id='note-title'>
+      <label for='note-text'>Note:</label>
+      <textarea type='text' id='note-text'></textarea>
+      <div>
+        <button type='submit'>Upload Note</button>
+      </div>
+    </form>
+    <section id='most-recent'>
+      <h2 id='recent-title'></h2>
+      <p id='recent-note'></p>
+    </section>
+  </main>
   
 </body>
 </html>
