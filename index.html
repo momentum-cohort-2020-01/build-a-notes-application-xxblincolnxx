@@ -8,33 +8,42 @@
   <title>Notes</title>
   <link rel="stylesheet" href="style.css">
   <script src="moment.min.js" defer></script>
+  <script src="babypic.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 
 <body>
   <main id='main'>
     <div class='heading'> 
-      <div id='baby-pic' class='baby-pic'></div>
+      <div class='baby-container'>
+        <img id='baby-pic' src=''>
+      </div>
       <div id='popup-form' class='popup-form'>
         <form id='new-note-form' class='form' style = 'display: none;'>
-          <label for='note-title'>CREATE NEW NOTE</label>
-          <input type=text id='note-title' placeholder="Title of note..." required>
+          <label for='note-title' class='form-label'>CREATE NEW NOTE</label>
+          <input type=text id='note-title' placeholder="Title of note..." class='title-input' required>
           <!-- <label for='note-text'>Note:</label> -->
-          <textarea type='text' id='note-text' placeholder="Write note here..." required></textarea>
-          <button id='note-upload-button' type='submit'>UPLOAD NOTE</button>
+          <textarea type='text' id='note-text' placeholder="Write note here..." class= 'note-text-input' required></textarea>
+          <button id='note-upload-button' type='submit' class='note-submit-button'>UPLOAD NOTE</button>
         </form>
-        <form id='edit-note-form' class='form' style = 'display: none;'>
-          <label for='edit-note-title'>EDIT NOTE</label>
-          <input type=text id='edit-note-title' placeholder="Title of note..." required>
+        <form id='edit-note-form' class='form edit-form' style = 'display: none;'>
+          <label for='edit-note-title' class='form-label'>EDIT NOTE</label>
+          <input type=text id='edit-note-title' placeholder="Title of note..." class='title-input' required>
           <!-- <label for='note-text'>Note:</label> -->
-          <textarea type='text' id='edit-note-text' placeholder="Write note here..." required></textarea>
-          <button id='edit-upload-button' type='submit'>UPDATE NOTE</button>
+          <textarea type='text' id='edit-note-text' placeholder="Write note here..." class='note-text-input' required></textarea>
+          <input id="note-id" type='number'>
+          <button id='edit-upload-button' type='submit' class='note-submit-button'>UPDATE NOTE</button>
         </form>
       </div>
     </div> 
     <nav id='nav-bar' class='nav-bar'>
+    <div class='nav-left'>
+      <button id='randomize-pic' onclick='randomPic()'>
+        RANDOM PICTURE
+      </button>
+    </div>
     <div class='nav-right'>
-      <button id='new-note-button' class = 'new-note-button' onclick='openForm()'>CREATE NEW NOTE</button>
+      <button id='new-note-button' class = 'new-note-button' onclick='openNewNoteForm()'>CREATE NEW NOTE</button>
     </div>
     </nav>
     <div id='left-menu' class='left-menu'>
@@ -42,9 +51,9 @@
       <ul id='notes-by-date'>
       </ul>
     </div>
-    <section id='most-recent' class='note-display'>
-      <h2 id='recent-title'></h2>
-      <p id='recent-note'></p>
+    <section id='note-display' class='note-display'>
+      <h2 id='recent-title'>Note Title</h2>
+      <p id='recent-note'>Note Body</p>
     </section>
   </main>
 
