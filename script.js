@@ -90,14 +90,6 @@ function uploadNewNote (title, text) {
   })
     .then(response => response.json())
 }
-// NOTE LIST FUNCTIONS
-function viewNote (noteID) {
-  console.log('you are trying to view ' + noteID)
-}
-
-// function editNote (noteID) {
-//   openEditForm()
-// }
 
 function deleteNote (noteID) {
   fetch(`http://localhost:3000/notes/${noteID}`, {
@@ -105,6 +97,28 @@ function deleteNote (noteID) {
   })
 }
 
+function uploadEditedNote (title, text, id) {
+  return fetch(`http://localhost:3000/notes/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ noteTitle: title, note: text })
+  })
+    .then(response => response.json())
+}
+
+// NOTE LIST FUNCTIONS
+function viewNote (noteID) {
+  getAllNotes()
+    .then(noteData => {
+      for (let note of noteData) {
+        if (note.id === parseInt(noteID)) {
+          dQS('#display-title').textContent = note.noteTitle
+          dQS('#display-date').textContent = moment(note.created).format('ll')
+          dQS('#display-text').textContent = note.note
+        }
+      }
+    })
+}
 newNoteForm.addEventListener('submit', event => {
   event.preventDefault()
   const noteTitleField = dQS('#note-title')
@@ -121,7 +135,14 @@ newNoteForm.addEventListener('submit', event => {
 })
 
 editNoteForm.addEventListener('submit', event => {
-
+  event.preventDefault()
+  const updatedTitle = dQS('#edit-note-title').value
+  const updatedText = dQS('#edit-note-text').value
+  const noteID = dQS('#note-id').value
+  closeEditForm()
+  randomPic()
+  uploadEditedNote(updatedTitle, updatedText, noteID)
+  displayNotesList()
 })
 
 // VIEW/EDIT/DELETE EVENTS:

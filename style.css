@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Slabo 27px', serif;
 }
 img {
   max-width: 100%;
@@ -29,10 +29,10 @@ img {
 }
 .baby-container {
   width: 40%;
- 
   display: flex;
   align-items: center;
   justify-content: center; 
+  border-right: 1px solid lightgray;
 }
 #baby-pic {
   width: 70%;
@@ -102,6 +102,10 @@ img {
   font-style: italic;
 }
 
+#note-id {
+  display: none;
+}
+
 .nav-bar {
   width: 100%;
   /* background-color: lightblue; */
@@ -110,6 +114,8 @@ img {
   justify-content: flex-end;
   align-items: center;
   min-width: 600px;
+  border-top: 4px double lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 
@@ -135,6 +141,11 @@ img {
   color: gray;
   background-color: lightgray
 }
+
+.new-note-button:hover {
+  color: rgb(48, 48, 48);
+  background-color: rgb(136, 136, 136)
+}
 #randomize-pic {
   height: 25px;
   padding: 5px;
@@ -147,9 +158,11 @@ img {
   background-color: lightgray
 }
 
-#new-note-button:hover {
-  border: 2px solid rgba(0, 0, 0, 0.336);
+#randomize-pic:hover {
+  color: rgb(48, 48, 48);
+  background-color: rgb(136, 136, 136)
 }
+
 
 .left-menu {
   width: 40%;
@@ -157,6 +170,7 @@ img {
   height: 1000px;
   padding: 5px;
   font-size: 15px;
+  border-right: 1px solid lightgray;
 }
 
 .list-title {
@@ -212,13 +226,45 @@ img {
 }
 
 .note-display {
-  background: url(/pics/kelly-sikkema-VBPzRgd7gfc-unsplash.jpg);
+  background: url(/pics/kelly-sikkema-SDa3foPsj5o-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 800px;
   width: 60%;
+  align-content: flex-start;
+  justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-#note-id {
-  display: none;
+.display-title {
+  width: 100%;
+  margin-top: 100px;
+  margin-left: 220px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(54, 54, 54);
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.display-date {
+  width: 100%;
+  margin-left: 220px;
+  margin-right: 100px;
+  text-align: center;
+  color: rgb(54, 54, 54);
+  font-weight: lighter;
+  line-height: 20px;
+}
+
+.display-text {
+  width: 100%;
+  margin-left: 220px;
+  margin-right: 100px;
+  text-align: center;
+  color: rgb(54, 54, 54);
 }
