@@ -64,9 +64,9 @@ function createNoteHTML (note) {
   return `<li data-note-id='${note.id}'> <p>
        <span class='bold'> ${moment(note.created).format('ll')}  :   </span>   ${note.noteTitle} </p>
       <div class='list-buttons'>
-      <button class='view-butt' title='View Current'>VIEW</button>
-      <button class='edit-butt' title='Edit Current'>EDIT</button>
-      <button class='delete-butt' title='Delete Current'>DEL</button> 
+      <button class='view-butt' title='View'>VIEW</button>
+      <button class='edit-butt' title='Edit'>EDIT</button>
+      <button class='delete-butt' title='Delete'>DEL</button> 
       </div>
       </li>`
 }

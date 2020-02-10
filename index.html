@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Notes</title>
+  <title>Baby Journal</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <script src="moment.min.js" defer></script>
   <script src="babypic.js" defer></script>
   <script src="script.js" defer></script>
@@ -21,30 +23,30 @@
       </div>
       <div id='popup-form' class='popup-form'>
         <form id='new-note-form' class='form' style = 'display: none;'>
-          <label for='note-title' class='form-label'>CREATE NEW NOTE</label>
-          <input type=text id='note-title' placeholder="Title of note..." class='title-input' required>
+          <label for='note-title' class='form-label'>NEW ENTRY</label>
+          <input type=text id='note-title' placeholder="A short summary..." class='title-input' required>
           <!-- <label for='note-text'>Note:</label> -->
-          <textarea type='text' id='note-text' placeholder="Write note here..." class= 'note-text-input' required></textarea>
-          <button id='note-upload-button' type='submit' class='note-submit-button'>UPLOAD NOTE</button>
+          <textarea type='text' id='note-text' placeholder="What did the baby do today?..." class= 'note-text-input' required></textarea>
+          <button id='note-upload-button' type='submit' class='note-submit-button'>UPLOAD ENTRY</button>
         </form>
         <form id='edit-note-form' class='form edit-form' style = 'display: none;'>
-          <label for='edit-note-title' class='form-label'>EDIT NOTE</label>
-          <input type=text id='edit-note-title' placeholder="Title of note..." class='title-input' required>
+          <label for='edit-note-title' class='form-label'>EDIT JOURNAL</label>
+          <input type=text id='edit-note-title' placeholder="What happened today?..." class='title-input edit' required>
           <!-- <label for='note-text'>Note:</label> -->
-          <textarea type='text' id='edit-note-text' placeholder="Write note here..." class='note-text-input' required></textarea>
+          <textarea type='text' id='edit-note-text' placeholder="Write note here..." class='note-text-input edit' required></textarea>
           <input id="note-id" type='number'>
-          <button id='edit-upload-button' type='submit' class='note-submit-button'>UPDATE NOTE</button>
+          <button id='edit-upload-button' type='submit' class='note-submit-button'>UPDATE ENTRY</button>
         </form>
       </div>
     </div> 
     <nav id='nav-bar' class='nav-bar'>
     <div class='nav-left'>
       <button id='randomize-pic' onclick='randomPic()'>
-        RANDOM PICTURE
+        RANDOM
       </button>
     </div>
     <div class='nav-right'>
-      <button id='new-note-button' class = 'new-note-button' onclick='openNewNoteForm()'>CREATE NEW NOTE</button>
+      <button id='new-note-button' class = 'new-note-button' onclick='openNewNoteForm()'>NEW ENTRY</button>
     </div>
     </nav>
     <div id='left-menu' class='left-menu'>

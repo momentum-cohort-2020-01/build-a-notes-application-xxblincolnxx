@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Slabo 27px', serif;
+  /* font-family: 'Slabo 27px', serif; */
+  font-family: 'Quicksand', sans-serif;
+  color: rgb(80, 80, 80);
 }
 img {
   max-width: 100%;
@@ -96,10 +98,13 @@ img {
 }
 
 .edit-form {
-  background-color: rgb(255, 255, 179);
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   border-radius: 5px;
   font-style: italic;
+}
+
+.edit {
+  background-color: rgb(255, 255, 179);
 }
 
 #note-id {
@@ -209,6 +214,11 @@ img {
   background-color: rgb(156, 231, 253);
   border-radius: 10px;
 }
+
+.view-butt:hover {
+  background-color: rgb(59, 204, 248);
+}
+
 .edit-butt {
   font-size: 10px;
   color: gray;
@@ -217,12 +227,20 @@ img {
   border-radius: 10px;
 }
 
+.edit-butt:hover {
+  background-color: rgb(238, 208, 127);
+}
+
 .delete-butt {
   font-size: 10px;
   color: rgb(95, 95, 95);
   padding: 3px;
   background-color: rgb(255, 171, 140);
   border-radius: 10px;
+}
+
+.delete-butt:hover {
+  background-color: rgb(230, 116, 75);
 }
 
 .note-display {
@@ -234,37 +252,41 @@ img {
   align-content: flex-start;
   justify-content: flex-start;
   display: flex;
+  
   flex-wrap: wrap;
 }
 
 .display-title {
   width: 100%;
-  margin-top: 100px;
-  margin-left: 220px;
-  margin-right: 100px;
+  margin-top: 150px;
+  margin-left: 235px;
+  margin-right: 125px;
   margin-bottom: 10px;
   text-align: center;
   color: rgb(54, 54, 54);
   font-weight: bold;
   text-decoration: underline;
   text-transform: uppercase;
+  font-family:'Shadows Into Light', cursive;
   font-size: 20px;
 }
 
 .display-date {
   width: 100%;
-  margin-left: 220px;
-  margin-right: 100px;
+  margin-left: 235px;
+  margin-right: 125px;
   text-align: center;
   color: rgb(54, 54, 54);
   font-weight: lighter;
+  font-family:'Shadows Into Light', cursive;
   line-height: 20px;
 }
 
 .display-text {
   width: 100%;
-  margin-left: 220px;
-  margin-right: 100px;
+  margin-left: 235px;
+  margin-right: 125px;
+  font-family:'Shadows Into Light', cursive;
   text-align: center;
   color: rgb(54, 54, 54);
 }
